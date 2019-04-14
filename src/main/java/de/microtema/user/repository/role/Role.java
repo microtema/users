@@ -1,6 +1,8 @@
 package de.microtema.user.repository.role;
 
 import de.microtema.user.repository.user.User;
+import io.katharsis.resource.annotations.JsonApiId;
+import io.katharsis.resource.annotations.JsonApiResource;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -20,9 +22,11 @@ import java.util.Set;
 @ToString(exclude = "users")
 @EqualsAndHashCode(exclude = "users")
 @Table(name = "ROLES")
+@JsonApiResource(type = "roles")
 public class Role {
 
     @Id
+    @JsonApiId
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

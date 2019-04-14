@@ -1,14 +1,12 @@
 package de.microtema.user.repository.user;
 
 import de.microtema.user.repository.role.RoleRepository;
-import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.Collections;
 
 @Service
-@DependsOn("roleService")
 public class UserService {
 
     private final UserRepository repository;

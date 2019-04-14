@@ -1,6 +1,8 @@
 package de.microtema.user.repository.user;
 
 import de.microtema.user.repository.role.Role;
+import io.katharsis.resource.annotations.JsonApiId;
+import io.katharsis.resource.annotations.JsonApiResource;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -19,9 +21,11 @@ import java.util.Set;
 @Data
 @Entity
 @Table(name = "USERS")
+@JsonApiResource(type = "users")
 public class User {
 
     @Id
+    @JsonApiId
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
