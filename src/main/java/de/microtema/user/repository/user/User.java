@@ -2,7 +2,9 @@ package de.microtema.user.repository.user;
 
 import de.microtema.user.repository.role.Role;
 import io.katharsis.resource.annotations.JsonApiId;
+import io.katharsis.resource.annotations.JsonApiRelation;
 import io.katharsis.resource.annotations.JsonApiResource;
+import io.katharsis.resource.annotations.SerializeType;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -37,6 +39,7 @@ public class User {
     @Column(columnDefinition = "VARCHAR", length = 100)
     private String email;
 
+    @JsonApiRelation(serialize = SerializeType.EAGER)
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
     private Set<Role> roles;

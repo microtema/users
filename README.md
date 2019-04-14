@@ -14,8 +14,8 @@ The following guides illustrate how to use some features concretely:
 ### Examples
 
 * JSON API 
-  
-  http://localhost:8080/api/users?fields[users]=name,email
+  * http://localhost:8080/api/roles?include=users&fields[roles]=name&fields[users]=name
+  * http://localhost:8080/api/users?fields[users]=name,email
 ```json
 {
    "data":[
@@ -27,7 +27,7 @@ The following guides illustrate how to use some features concretely:
             "email":"mario@microtema.de"
          },
          "links":{
-            "self":"http://localhost:8080/users/1"
+            "self":"http://localhost:8080/api/users/1"
          }
       },
       {
@@ -38,7 +38,7 @@ The following guides illustrate how to use some features concretely:
             "email":"aeneas@microtema.de"
          },
          "links":{
-            "self":"http://localhost:8080/users/2"
+            "self":"http://localhost:8080/api/users/2"
          }
       },
       {
@@ -49,7 +49,7 @@ The following guides illustrate how to use some features concretely:
             "email":"emmy@web.de"
          },
          "links":{
-            "self":"http://localhost:8080/users/3"
+            "self":"http://localhost:8080/api/users/3"
          }
       }
    ],
