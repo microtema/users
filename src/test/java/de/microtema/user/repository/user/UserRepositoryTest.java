@@ -16,13 +16,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = UserApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class UserRepositoryTest {
 
-    public static final ParameterizedTypeReference<Map> USER_TYPE = new ParameterizedTypeReference<Map>() {
+    static final ParameterizedTypeReference<Map> USER_TYPE = new ParameterizedTypeReference<Map>() {
     };
 
     @Autowired

@@ -16,20 +16,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = UserApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class RoleRepositoryTest {
 
-    public static final ParameterizedTypeReference<Map> ROLE_TYPE = new ParameterizedTypeReference<Map>() {
+    static final ParameterizedTypeReference<Map> ROLE_TYPE = new ParameterizedTypeReference<Map>() {
     };
 
     @Autowired
     TestRestTemplate restTemplate;
 
     @Test
-    public void getUsers() {
+    public void getRoles() {
 
         ResponseEntity<Map> entity = restTemplate.getForEntity("/roles", Map.class);
 
